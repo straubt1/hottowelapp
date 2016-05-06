@@ -6,9 +6,10 @@ before_install:
   - npm install -g gulp
 script: gulp build
 deploy:
+  skip_cleanup: true
   provider: azure_web_apps
-  username: azure_deployment_user       # If AZURE_WA_USERNAME isn't set
-  password: azure_deployment_password   # If AZURE_WA_PASSWORD isn't set
-  site: hottowel       # If AZURE_WA_SITE isn't set
+  provider: script
+  script: deploy.sh
   on:
     all_branches: true
+   
