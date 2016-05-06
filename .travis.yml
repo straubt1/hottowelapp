@@ -1,7 +1,7 @@
-before_script:
-  - npm install -g bower
-  - npm install -g gulp
 language: node_js
 node_js:
   - "6.0"
+before_install:
+  - npm install -g bower
+  - npm install -g gulp
 script: gulp build
